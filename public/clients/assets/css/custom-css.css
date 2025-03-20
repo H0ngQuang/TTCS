@@ -1,0 +1,6 @@
+.datetimepicker-custom {
+    padding: 0;
+}
+.datetimepicker-custom:focus {
+    border: none;
+}

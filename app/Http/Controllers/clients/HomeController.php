@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\clients;
 
+use App\Models\clients\Home;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,10 +13,17 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private $homeTours;
+    public function __construct()
+    {
+        $this->homeTours = new  Home();
+    }
     public function index()
     {
         $title = 'Trang chủ';
-        return view('clients.home', compact('title'));
+        $tours = $this->homeTours->getHomeTours();
+        // dd($tours);
+        return view('clients.home', compact('title', 'tours'));
     }
 
     /**

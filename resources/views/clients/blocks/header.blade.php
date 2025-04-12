@@ -17,7 +17,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;display=swap"
         rel="stylesheet">
-
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- Flaticon -->
     <link rel="stylesheet" href="{{ asset('clients/assets/css/flaticon.min.css') }}">
     <!-- Font Awesome -->
@@ -29,6 +29,8 @@
     <!-- Nice Select -->
     <link rel="stylesheet" href="{{ asset('clients/assets/css/nice-select.min.css') }}">
     <!-- Animate -->
+    <link rel="stylesheet" href="{{ asset('clients/assets/css/jquery-ui.min.css') }}">
+    
     <link rel="stylesheet" href="{{ asset('clients/assets/css/aos.css') }}">
     <!-- Slick -->
     <link rel="stylesheet" href="{{ asset('clients/assets/css/slick.min.css') }}">
@@ -40,6 +42,8 @@
         href="{{ asset('clients/assets/css/css-login/fonts/material-icon/css/material-design-iconic-font.min.css') }}">
     <!-- Main css -->
     <link rel="stylesheet" href="{{ asset('clients/assets/css/css-login/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('clients/assets/css/custom-css.css') }}">
+
 </head>
 
 <body>
@@ -93,7 +97,6 @@
                                             <a href="#">Tours</a>
                                             <ul>
                                                 <li><a href="{{ route('tours') }}">Tours</a></li>
-                                                
                                             </ul>
                                         </li>
                                         <li class="{{ Request::url() == route('destination') ? 'active' : '' }}"><a
@@ -113,13 +116,16 @@
                                 <span data-hover="Book Now">Book Now</span>
                                 <i class="fal fa-arrow-right"></i>
                             </a>
-                            <!-- menu sidbar -->
                             <div class="menu-sidebar">
-                                <button class="bg-transparent">
-                                    <a href="{{ route('login') }}">
-                                        <i class='bx bxs-user bx-tada' style="font-size: 36px; color:black;"></i>
-                                    </a>
-                                </button>
+                                <li class="drop-down">
+                                    <button class="dropdown-toggle bg-transparent" id="userDropdown">
+                                        <i class='bx bxs-user bx-tada' style="font-size: 36px; color: black;"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" id="dropdown-menu">
+                                        <li><a href="{{ route('login') }}">Đăng nhập</a></li>
+                                        <li><a href="#">Thông tin cá nhân</a></li>
+                                    </ul>
+                                </li>
                             </div>
                         </div>
                     </div>
@@ -127,3 +133,5 @@
             </div>
             <!--End Header Upper-->
         </header>
+    </div>
+</body>

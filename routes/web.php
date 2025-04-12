@@ -15,17 +15,16 @@ use App\Http\Controllers\clients\TestimonialController;
 use App\Http\Controllers\clients\BlogController;
 use App\Http\Controllers\clients\BlogDetailController;
 use App\Http\Controllers\clients\LoginController;
+
 use App\Http\Controllers\admin\LoginAdminController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\AdminManagementController;
+use App\Http\Controllers\admin\BookingManagementController;
+use App\Http\Controllers\admin\ContactManagementController;
+use App\Http\Controllers\admin\ToursManagementController;
+use App\Http\Controllers\admin\UserManagementController;
+use App\Http\Controllers\admin\AddToursController;
+
 
 // Route::get('/', function () {
 //     return view('home');
@@ -43,4 +42,18 @@ Route::get('/testimonial', [TestimonialController::class, 'index'])->name('testi
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs');
 Route::get('/blog-detail', [BlogDetailController::class, 'index'])->name('blog-detail');
 Route::get('/login',[LoginController::class,'index']) ->name('login');
-Route::get('/profile-admin', [LoginAdminController::class, 'index'])->name('profile-admin');
+Route::post('/register',[LoginController::class,'register']) ->name('register');
+Route::get('activate-account/{token}', [LoginController::class, 'activateAccount'])->name('activate.account');
+
+
+
+Route::prefix('admin')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/admin', [AdminManagementController::class, 'index'])->name('admin.admin');
+    Route::get('/bookings', [BookingManagementController::class, 'index'])->name('admin.bookings');
+    Route::get('/contacts', [ContactManagementController::class, 'index'])->name('admin.contacts');
+    Route::get('/tours', [ToursManagementController::class, 'index'])->name('admin.tours');
+    Route::get('/users', [UserManagementController::class, 'index'])->name('admin.users');
+    Route::get('/login', [LoginAdminController::class, 'index'])->name('admin.login');
+    Route::get('/page-add-tours', [AddToursController::class, 'index'])->name('admin.page-add-tours');
+});

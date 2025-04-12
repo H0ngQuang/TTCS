@@ -1,6 +1,69 @@
 .datetimepicker-custom {
     padding: 0;
 }
+
 .datetimepicker-custom:focus {
     border: none;
 }
+
+.main-header.header-one .main-menu .navbar-collapse .navbar-active {
+    padding: var(--primary-color);
+}
+
+
+.menu-sidebar .dropdown-menu {
+    padding: 12px 0;
+}
+.icon-user{
+    font-size: 36px;
+    color: black;
+}
+
+/* Dropdown menu hidden by default */
+.dropdown-menu {
+    list-style-type: none;
+    position: absolute;
+    top: 50px; /* Adjust to the correct position */
+    padding: 0;
+    right: 0px;
+    background-color: white;
+    display: none;
+    border: 1px solid #ddd;
+    z-index: 1050; /* Ensure the dropdown menu appears above other elements */
+}
+
+.menu-sidebar .dropdown-menu {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Thêm box-shadow */
+}
+
+.dropdown-menu li {
+    padding: 4px 8px; /* Reduce padding to make the items smaller */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+    /* Không có đường viền dưới cho mục cuối cùng */
+}
+
+.dropdown-menu li:hover {
+    background-color: var(--primary-color);
+}
+
+.dropdown-menu li a {
+    margin: 8px 16px;
+    text-decoration:    none;
+    color: black;
+    display: block
+}
+.block_tours{
+    display: flex;
+    flex-direction: column;
+    justify-self: space-between;
+    height: 100%;
+}
+.tour-gallery .gallery-between, .tour-gallery .gallery-item img{
+    height: 99.6%;
+    border-radius: 8px;
+} 

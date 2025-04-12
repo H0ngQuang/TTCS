@@ -104,7 +104,6 @@
                                                 href="{{ route('contact') }}">Liên Hệ</a></li>
                                     </ul>
                                 </div>
-
                             </nav>
                             <!-- Main Menu End-->
                         </div>
@@ -124,13 +123,16 @@
                                 <span data-hover="Book Now">Book Now</span>
                                 <i class="fal fa-arrow-right"></i>
                             </a>
-                            <!-- menu sidbar -->
                             <div class="menu-sidebar">
-                                <button class="bg-transparent">
-                                    <a href="{{ route('login') }}">
+                                <div class="drop-down">
+                                    <button class="dropdown-toggle bg-transparent" id="userDropdown">
                                         <i class='bx bxs-user bx-tada' style="font-size: 36px; color: white;"></i>
-                                    </a>
-                                </button>
+                                    </button>
+                                    <ul class="dropdown-menu" id="dropdown-menu">
+                                        <li><a href="{{ route('login') }}">Đăng nhập</a></li>
+                                        <li><a href="#">Thông tin cá nhân</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -138,3 +140,5 @@
             </div>
             <!--End Header Upper-->
         </header>
+    </div>
+</body>

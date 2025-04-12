@@ -51,23 +51,31 @@
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Đăng ký</h2>
-                        <form method="POST" class="register-form" id="register-form">
+                        <span id="error" class="alert alert-danger" style="padding : 10px 3px"></span>
+                        <span id = "message" class ="alert alert-success" style="padding : 10px 3px "></span>
+                        <form action="{{ route('register') }}" method="POST" class="register-form" id="register-form"
+                            style="margin-top: 15px">
+                            @csrf
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Tên đăng ký" />
+                                <label for="username_register"><i
+                                        class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="username_register" id="username_register"
+                                    placeholder="Tên tài khoản" required />
                             </div>
                             <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Email" />
+                                <label for="email_register"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email_register" id="email_register" placeholder="Email"
+                                    required />
                             </div>
                             <div class="form-group">
-                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Mật khẩu" />
+                                <label for="password_register"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password_register" id="password_register"
+                                    placeholder="Mật khẩu" required />
                             </div>
                             <div class="form-group">
-                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="password" name="re_pass" id="re_pass"
-                                    placeholder="Nhập lại mật khẩu" />
+                                <label for="re_pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="re_pass" id="re_pass" placeholder="Nhập lại mật khẩu"
+                                    required />
                             </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="signup" id="signup" class="form-submit"

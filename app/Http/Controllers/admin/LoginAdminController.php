@@ -14,7 +14,8 @@ class LoginAdminController extends Controller
      */
     public function index()
     {
-        return view('admin.profile-admin');
+        $title = 'ADMIN';
+        return view('admin.profile-admin',compact('title'));
     }
 
     /**

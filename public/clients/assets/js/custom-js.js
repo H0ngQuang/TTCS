@@ -138,7 +138,7 @@ $("#register-form").on("submit", function (e) {
                 if(response.success){
                     $('#message').text(response.message).show();
                     $('#error').hide();
-                    $('#register-form').trigger('reset');
+                    $('#login-form').trigger('reset');
 
                 } else {
                     $('message').hide();

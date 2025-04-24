@@ -42,7 +42,7 @@ Route::get('/testimonial', [TestimonialController::class, 'index'])->name('testi
 Route::get('/blogs', [BlogController::class, 'index'])->name('blogs');
 Route::get('/blog-detail', [BlogDetailController::class, 'index'])->name('blog-detail');
 Route::get('/login',[LoginController::class,'index']) ->name('login');
-Route::post('/register',[LoginController::class,'register']) ->name('register');
+Route::post('/login',[LoginController::class,'register']) ->name('register');
 Route::get('activate-account/{token}', [LoginController::class, 'activateAccount'])->name('activate.account');
 
 

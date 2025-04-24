@@ -14,11 +14,13 @@
 
                     <div class="signin-form">
                         <h2 class="form-title">Đăng nhập</h2>
-                        <form method="POST" class="register-form" id="login-form">
+                        <form action = "{{ route('user-login') }}"method="POST" class="login-form" id="login-form">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="your_name" id="your_name" placeholder="Tên đăng nhập" />
                             </div>
+                            <div class = "invalid-feedback" style ="margin-top : -15px" id ="validate_username"></div>
+                            @csrf
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="password" name="your_pass" id="your_pass" placeholder="Mật khẩu" />
